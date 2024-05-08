@@ -1,0 +1,20 @@
+Below is a summary of the character {} based on part of a story:
+
+---
+
+{}
+
+---
+
+Currently, this summary contains {} words. Your task is to condense it to less than {} words. The condensed summary should remain clear, overarching, and fluid while being brief. Whenever feasible, maintain details about gender, skills, talents, objectives, background, relationships, key events, and personality about this character - but express these elements more succinctly. Make sure to provide a brief introduction to characters, places, and other major components during their first mention in the condensed summary. Remove insignificant details that do not add much to the character portrayal. The story may feature non-linear narratives, flashbacks, switches between alternate worlds or viewpoints, etc. Therefore, you should organize the summary so it presents a consistent and chronological narrative.
+
+Output your summary into four specific sections, using the following titles as paragraph headers:
+
+Attributes: // Briefly identify the character's gender, skills, talents, objectives, and background within 50 words.
+Relationships: // Briefly describe the character's relationships with other characters within 50 words.
+Events: // Organize the main events the character experiences or is involved in chronological order within {} words.
+Personality: // Briefly identify the character's personality within 50 words.
+
+Ensure that each section explicitly starts with the specified title, followed by the content, and that there is a clear separation (a newline) between each section.
+
+Condensed summary (to be within {} words):

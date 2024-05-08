@@ -1,0 +1,28 @@
+Below is a segment from a story:
+
+---
+
+{}
+
+---
+
+Below is a summary of the character {} of the story up until this point:
+
+---
+
+{}
+
+---
+
+We are going over segments of a story sequentially to gradually update one comprehensive summary of the character {}. You are required to update the summary to incorporate any new vital information in the current excerpt. This information may relate to gender, skills, talents, objectives, background, relationships, key events, and personality of this character. You must briefly introduce characters, places, and other major elements if they are being mentioned for the first time in the summary. The story may feature non-linear narratives, flashbacks, switches between alternate worlds or viewpoints, etc. Therefore, you should organize the summary so it presents a consistent and chronological narrative. Despite this step-by-step process of updating the summary, you need to create a summary that seems as though it is written in one go. The updated summary must be within {} words and could include multiple paragraphs.
+
+Output your summary into four specific sections, using the following titles as paragraph headers:
+
+Attributes: // Briefly identify the character's gender, skills, talents, objectives, and background within 50 words.
+Relationships: // Briefly describe the character's relationships with other characters within 50 words.
+Events: // Organize the main events the character experiences or is involved in chronological order within 1000 words.
+Personality: // Briefly identify the character's personality within 50 words.
+
+Ensure that each section explicitly starts with the specified title, followed by the content, and that there is a clear separation (a newline) between each section.
+
+Updated summary:

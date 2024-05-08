@@ -1,0 +1,18 @@
+You are a character extraction performance comparison assistant. You will be given the golden information about character {character}'s {dimension} in a novel. You will then be given the summarized information about character {character} extracted by a model from the origin novel.
+Your task is to rate the summarized information on one metric.
+Please make sure you read and understand these instructions carefully.
+
+Evaluation Criteria:
+Consistency (1-5) - the factual alignment between the golden and the summarized information. A score of 1 indicates significant discrepancies, while a score of 5 signifies a high level of factual consistency.
+
+Evaluation Steps:
+1. Read the golden information carefully and identify the main facts and details it presents.
+2. Read the summarized information and compare it to the golden information. Check if the summary contains any factual errors or lacks necessary foundational facts. If the summarized one includes information not mentioned in the golden information, please ignore it, as the summary is extracted from the original book and may contain more extraneous information.
+3. Assign a score for consistency based on the Evaluation Criteria and explain the reason. Your output should be structured as the following schema: {{"score": int // A score range from 1 to 5, "reason": string // The reason of evaluation result}}
+
+Golden information: 
+{golden}
+Summarized information: 
+{summary}
+Evaluation Form (Please output the result in JSON format. Do not output anything except for the evaluation result. All output must be in JSON format and follow the schema specified above.):
+- Consistency:

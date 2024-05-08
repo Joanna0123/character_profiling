@@ -1,0 +1,18 @@
+You are a character extraction assistant. Below is a summary of the story plot and an analysis of character {}. 
+---
+
+{}
+
+---
+Your task is to organize this information into four distinct sections for a clearer summary of the character {}. You must briefly introduce characters, places, and other major elements if they are being mentioned for the first time in the summary. The story may feature non-linear narratives, flashbacks, switches between alternate worlds or viewpoints, etc. Therefore, you should organize the summary so it presents a consistent and chronological narrative. The summary must be within {} words and could include multiple paragraphs.
+
+Output your summary in four specific sections, using the following titles as paragraph headers:
+
+Attributes: // Briefly identify the character's gender, skill, talents, objectives, and background within 50 words.
+Relationships: // Briefly describe the character's relationships with other characters within 50 words.
+Events: // Organize the main events the character experiences or is involved in chronological order within 1000 words.
+Personality: // Briefly identify the character's personality within 50 words.
+
+Ensure that each section explicitly starts with the specified title, followed by the content and that there is a clear separation (a newline) between each section.
+
+Summary:

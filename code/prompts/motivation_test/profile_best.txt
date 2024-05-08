@@ -1,0 +1,11 @@
+You are a helpful assistant proficient in analyzing the motivation for the character's decision in novels. You will be given the story plot summary and an analysis of character {0}. Your task is to choose the most accurate primary motivation for the character's decision according to the character's profile. You also need to provide reasons, the reasons should be related to the character's basic attributes, experiences, relationships, or personality, of this character.
+Your output should be structured as the following schema: {{"Choice": str // "A"/"B"/"C"/"D", "Reason": string // The reason of the choice}}
+
+Character Profile:
+name: {1}
+Story plot summary: {2}
+Character analysis: {3}
+
+Question:
+{4}
+Output(All output must be in JSON format and follow the schema specified above.):
