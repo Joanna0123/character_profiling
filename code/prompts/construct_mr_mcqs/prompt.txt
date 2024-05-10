@@ -1,0 +1,398 @@
+I will give you the summary of a book and a character's name in this book. Your task is to read the summary and design at least 5 multiple-choice questions about this character. For each question, you should identify a significant decision the character made and ask why does the character make this decision. You should give four options for each question and only one is the correct answer. The correct answer is the character's motivation of making this decision mentioned in this book. You need to design the other three options. These wrong options should be reasonable but not completely consistent with the character's personality, past experiences or social relationships mentioned in the book. For each option, you should explain why it is correct based on the character's personality, past experiences and social relationships or why it is not the best choice compared to the correct answer. The output should be in json format.
+
+Output format:
+{{
+'Character A':
+    [{{
+    'Multiple Choice Question':
+        {{
+        'Scenario': xxx
+        'Question': xxx
+        'Options':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        'Correct Answer': x
+        'Reasons':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        }}
+    }},
+    {{
+    'Multiple Choice Question':
+        {{
+        'Scenario': xxx
+        'Question': xxx
+        'Options':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        'Correct Answer': x
+        'Reasons':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        }}
+    }},
+    {{
+    'Multiple Choice Question':
+        {{
+        'Scenario': xxx
+        'Question': xxx
+        'Options':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        'Correct Answer': x
+        'Reasons':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        }}
+    }},
+    {{
+    'Multiple Choice Question':
+        {{
+        'Scenario': xxx
+        'Question': xxx
+        'Options':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        'Correct Answer': x
+        'Reasons':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        }}
+    }},
+    {{
+    'Multiple Choice Question':
+        {{
+        'Scenario': xxx
+        'Question': xxx
+        'Options':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        'Correct Answer': x
+        'Reasons':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        }}
+    }},
+    {{
+    'Multiple Choice Question':
+        {{
+        'Scenario': xxx
+        'Question': xxx
+        'Options':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        'Correct Answer': x
+        'Reasons':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        }}
+    }},
+    {{
+    'Multiple Choice Question':
+        {{
+        'Scenario': xxx
+        'Question': xxx
+        'Options':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        'Correct Answer': x
+        'Reasons':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        }}
+    }},
+    {{
+    'Multiple Choice Question':
+        {{
+        'Scenario': xxx
+        'Question': xxx
+        'Options':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        'Correct Answer': x
+        'Reasons':
+        [
+        'A.xxx',
+        'B.xxx',
+        'C.xxx',
+        'D.xxx'
+        ]
+        }}
+    }}
+    ]
+}}
+
+Example:
+Input:
+Summary:
+<text>
+{0}
+<text>
+Character Name: Harry Potter
+
+Output:
+{{
+  "Harry Potter": [
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "Harry decides to use the Half-Blood Prince's potion book to excel in Potions class.",
+        "Question": "Why does Harry decide to rely on the Half-Blood Prince's annotations?",
+        "Options": [
+          "A.To impress Professor Slughorn.",
+          "B.He enjoys breaking rules.",
+          "C.To outperform Hermione for personal satisfaction.",
+          "D.Because he is intrigued by the mysterious knowledge and its immediate benefits."
+        ],
+        "Correct Answer": "D",
+        "Reasons": [
+          "A.Impressing Slughorn is a result of using the book, but not Harry's initial motive.",
+          "B.Breaking rules is something that Harry does when he believes it's necessary, not for enjoyment.",
+          "C.While there is friendly rivalry, outperforming Hermione is not his primary motivation.",
+          "D.This is the correct answer as Harry's curiosity and the practical success he achieves with the potions drives him to use the book."
+        ]
+      }}
+    }},
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "When Harry decides to go after the Sorcerer's Stone",
+        "Question": "Why does Harry decide to go after the Sorcerer's Stone?",
+        "Options": [
+          "A.To prove his worth to Hogwarts.",
+          "B.To protect it from Voldemort.",
+          "C.Because he was curious about its power.",
+          "D.To gain fame and recognition."
+        ],
+        "Correct Answer": "B",
+        "Reasons": [
+          "A.This isn’t consistent with Harry’s personality; he's more driven by doing what’s right than proving his worth.",
+          "B.Correct, Harry’s main motivation is to prevent Voldemort from getting the stone and returning to power.",
+          "C.Harry's curiosity plays a role in his adventures, but it's not the primary motivator for seeking the stone.",
+          "D.Seeking fame and recognition has never been a driving force for Harry; he aims to make a difference, not to gain fame."
+        ]
+      }}
+    }},
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "When Harry refuses to join Malfoy",
+        "Question": "Why does Harry refuse Draco Malfoy's offer of friendship?",
+        "Options": [
+          "A.He already disliked Malfoy.",
+          "B.He sensed Malfoy's intentions were not genuine.",
+          "C.To align with Ron and Hermione.",
+          "D.Malfoy's values conflicted with his own."
+        ],
+        "Correct Answer": "D",
+        "Reasons": [
+          "A.Prior personal dislike isn't the strongest reason for Harry; it was more about values than initial impressions.",
+          "B.While sensing intentions plays a part, it's more about the clear clash of values between them.",
+          "C.While friendship with Ron and Hermione influences Harry, his decision is based on his own values.",
+          "D.Correct, Harry refuses because Malfoy’s expressed values, particularly regarding blood purity, starkly conflict with his own."
+        ]
+      }}
+    }},
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "When Harry decides to use the invisibility cloak",
+        "Question": "Why does Harry use the invisibility cloak to visit the Mirror of Erised?",
+        "Options": [
+          "A.He was curious about the mirror's powers.",
+          "B.To find a way to see his family.",
+          "C.He wanted to explore the castle undetected.",
+          "D.To learn more secrets of Hogwarts."
+        ],
+        "Correct Answer": "B",
+        "Reasons": [
+          "A.While curiosity is a factor, the primary motivation is the emotional connection to seeing his family.",
+          "B.Correct, Harry’s longing to see his family, whom he never knew, drives him to use the cloak despite the risks.",
+          "C.Exploring the castle is a benefit but not the main reason for his first use of the cloak in this context.",
+          "D.While Harry is interested in Hogwarts' secrets, his use of the cloak in this scenario is motivated by personal reasons."
+        ]
+      }}
+    }},
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "When Harry decides to learn the Patronus Charm",
+        "Question": "Why does Harry decide to learn the Patronus Charm?",
+        "Options": [
+          "A.To protect himself from Dementors.",
+          "B.He wants to prove he can master advanced magic.",
+          "C.To impress Lupin.",
+          "D.As a challenge to himself."
+        ],
+        "Correct Answer": "A",
+        "Reasons": [
+          "A.Correct, Harry’s primary motivation is to protect himself and others from the effects of Dementors.",
+          "B.While mastering advanced magic is appealing, protection is the key reason here.",
+          "C.Impressing Lupin might be a minor factor, but it's not the main reason for learning the charm.",
+          "D.While Harry does enjoy a challenge, the need for protection in this instance is more pressing."
+        ]
+      }}
+    }},
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "When Harry decides to participate in the Triwizard Tournament",
+        "Question": "Why does Harry decide to participate in the Triwizard Tournament?",
+        "Options": [
+          "A.To prove he is the best wizard.",
+          "B.He was magically bound to participate.",
+          "C.To gain fame within the wizarding community.",
+          "D.To challenge himself against older students."
+        ],
+        "Correct Answer": "B",
+        "Reasons": [
+          "A.Harry never seeks to prove he is the best; he is more modest and focus on doing what's right or necessary.",
+          "B.Correct, Harry’s name coming out of the Goblet of Fire binds him to participate due to the magical contract.",
+          "C.Seeking fame is not in Harry's nature; his actions are usually driven by a sense of duty or protection.",
+          "D.While Harry does not shy away from challenges, he did not choose to enter the tournament for this reason."
+        ]
+      }}
+    }},
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "Forming Dumbledore’s Army",
+        "Question": "Why does Harry agree to lead Dumbledore’s Army?",
+        "Options": [
+          "A.To rebel against Umbridge.",
+          "B.Because he enjoys teaching and leading others.",
+          "C.To prepare his peers for the threat of Voldemort.",
+          "D.To gain popularity among his peers."
+        ],
+        "Correct Answer": "C",
+        "Reasons": [
+          "A.While resistance against Umbridge is a factor, it's not the primary reason; Harry is more driven by the need to combat the greater threat of Voldemort.",
+          "B.While Harry does find he has a knack for teaching, his motivation is rooted in the need to face Voldemort, rather than personal enjoyment.",
+          "C.This is the correct answer because Harry understands the imminent danger that Voldemort poses and wants to prepare others to defend themselves.",
+          "D.Gaining popularity is contrary to Harry’s character, who is more concerned with the safety and well-being of others than his social standing."
+        ]
+      }}
+    }},
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "Disobeying Professor Snape",
+        "Question": "Why does Harry often disobey Snape?",
+        "Options": [
+          "A.Because he dislikes authority figures.",
+          "B.To protect his friends.",
+          "C.Because Snape is unfair to him and his friends.",
+          "D.For the thrill of breaking rules."
+        ],
+        "Correct Answer": "C",
+        "Reasons": [
+          "A.While Harry struggles with authority figures, his issue with Snape is more personal and not just a blanket opposition to authority.",
+          "B.Protecting his friends is a key motivator for Harry, but his reasons for disobeying Snape often stem from how Snape treats him and his friends, rather than a direct threat.",
+          "C.This is the correct answer. Harry’s relationship with Snape is complicated by perceived unfairness and hostility, influencing his reactions and decisions.",
+          "D.While Harry does occasionally break rules, his actions towards Snape are less about seeking thrills and more about responding to mistreatment."
+        ]
+      }}
+    }},
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "Harry chooses to break into Gringotts to retrieve a Horcrux.",
+        "Question": "Why does Harry decide to break into Gringotts?",
+        "Options": [
+          "A.For the thrill of the adventure.",
+          "B.To retrieve the Horcrux, which is necessary for Voldemort’s defeat.",
+          "C.Because he wants to steal money and resources for the mission.",
+          "D.To undermine the goblins’ authority."
+        ],
+        "Correct Answer": "B",
+        "Reasons": [
+          "A.Harry’s motivation is not adventure but the necessity of completing a dangerous mission to defeat Voldemort.",
+          "B.Correct. Retrieving the Horcrux from Bellatrix Lestrange’s vault is a critical step in dismantling Voldemort’s defences.",
+          "C.Harry has no interest in stealing for financial gain; his actions are always driven by a larger purpose.",
+          "D.Harry has no intention of undermining the goblins or anyone’s authority; his actions are solely focused on defeating Voldemort."
+        ]
+      }}
+    }},
+    {{
+      "Multiple Choice Question": {{
+        "Scenario": "Towards the end of the book, Harry decides to keep the Elder Wand's true allegiance a secret.",
+        "Question": "Why does Harry decide to keep the Elder Wand's allegiance a secret?",
+        "Options": [
+          "A. He plans to use its power for personal gain.",
+          "B. To prevent future attempts by others to claim its power and ensure it cannot be used for evil again.",
+          "C. Because he does not fully understand how the wand’s allegiance works.",
+          "D. He fears others will see him as weak if they know the wand’s allegiance can change."
+        ],
+        "Correct Answer": "B",
+        "Reasons": [
+          "A. Harry has never shown interest in using power for personal gain, preferring to protect others.",
+          "B. Correct. Harry’s decision is driven by the desire to prevent further misuse of the wand’s power, reflecting his protective nature.",
+          "C. Harry understands well enough how the wand’s allegiance works to make an informed decision.",
+          "D. Fear of appearing weak is not in line with Harry’s actions, which are often characterized by bravery and a disregard for personal image."
+        ]
+      }}
+    }}
+  ]
+}}
+
+Input:
+Summary:
+<text>
+{1}
+<text>
+Character Name: {2}
+
+Output(json format):
+
+"""

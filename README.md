@@ -1,7 +1,7 @@
 ## Preprocess
-Due to copyright reasons, we will not publicly release the original text of the books. We recommend that researchers purchase the ePub book version recommended on SuperSummary and place it in the data/books/epub folder, with the filename being the title of the book. Then process the original ePub files into JSON files using the following code for experiments.
+Due to copyright reasons, we will not publicly release the original text of the books. We recommend that researchers purchase the ePub book version recommended on SuperSummary and place it in the `data/books/epub` folder, with the filename being the title of the book. Then process the original ePub files into JSON files using the following code for experiments.
 
-```python
+```bash
 cd code
 python epub2json.py
 ```
@@ -9,7 +9,7 @@ python epub2json.py
 ## Generate Character Profiles
 Below are example command lines for generating character profiles:
 
-```python
+```bash
 cd code
 # incremental updating
 python incremental_updating.py --save_folder ../exp/incremental/gpt-4-0125/ --chunk_size 3000 --max_summary_len 1200 --prompt profile_incremental
@@ -26,7 +26,7 @@ Due to copyright reasons, we are temporarily not releasing golden reference char
 
 Below are example command lines for factual consistency examination:
 
-```python
+```bash
 # The 'type' parameter can be one of the following: 'incremental', 'hierarchical', 'once'.
 
 cd code
@@ -55,7 +55,7 @@ Here's the format of the JSON file:
 
 Below are example command lines for motivation recognition:
 
-```python
+```bash
 cd code
 python evaluation_motivation.py --persona_file ../exp/incremental/gpt-4-0125/result.json --type incremental --num_attempts 3
 ```
