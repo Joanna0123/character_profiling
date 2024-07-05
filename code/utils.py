@@ -158,9 +158,12 @@ def convert_json(original_data, type):
                 'events' : sections.get("Events", ""),
                 'personality' : sections.get("Personality", ""),
                 }
+    elif type == "golden":
+        transformed_data = convert_json_to_dict_golden(original_data)
     if type == "once":
         assert len(transformed_data) == 47
     else:
+        print(len(transformed_data))
         assert len(transformed_data) == 126
     return transformed_data
 
@@ -176,13 +179,15 @@ def convert_json_to_dict_golden(json_data):
             relationships = details.get('relationships', [])
             events = details.get('events', [])
             personality = details.get('personality', {})
+            summary = details.get('summary', {})
             
             result_dict[title] = {
                 'character': name,
                 'traits': traits,
                 'relationships': relationships,
                 'events': events,
-                'personality': personality
+                'personality': personality,
+                'summary': summary
             }
     return result_dict
 

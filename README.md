@@ -22,7 +22,6 @@ python summarize_in_one_go.py --save_folder ../exp/once/gpt-4-0125/ --chunk_size
 ```
 
 ## Factual Consistency Examination
-Due to copyright reasons, we are temporarily not releasing golden reference character profiles. If you need access to the data for academic research purposes, please contact us via email.(See "Contact" section below)
 
 Below are example command lines for factual consistency examination:
 

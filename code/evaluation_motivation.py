@@ -3,7 +3,7 @@ import json
 from tqdm import tqdm
 from langchain.callbacks import get_openai_callback
 from langchain_openai import ChatOpenAI, AzureChatOpenAI
-from utils import convert_json
+from utils import convert_json, get_response
 from langchain_core.messages import (
     AIMessage,
     HumanMessage,
@@ -103,6 +103,8 @@ def main(type, test_result_file, ablation):
                 batch = prompt_list[i:i+50]
                 batch_responses = client.batch([[HumanMessage(content=prompt),] for prompt in batch])
                 responses.extend(batch_responses)
+            # for prompt in tqdm(prompt_list):
+            #     responses.append(get_response(prompt))
             # match response with id
             for response, id in zip(responses, id_list):
                 answers[str(id)] = eval(response.content)
@@ -154,7 +156,7 @@ import argparse
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Motivation Recognition')
     parser.add_argument('--persona_file', type=str, default="../exp/incremental/gpt-4-0125/result.json")
-    parser.add_argument('--type', type=str, default='incremental', help='summarization method(incremental/hierarchical/once)')
+    parser.add_argument('--type', type=str, default='incremental', help='summarization method(incremental/hierarchical/once/golden)')
     parser.add_argument('--num_attempts', type=int, default=1, help='number of attempts')
     parser.add_argument('--ablation', type=str, default=None, help='ablation type(None/no_traits/no_relationships/no_events/no_personality/no_tr_re/no_tr_re_ev/none_profile)')
     args = parser.parse_args()
@@ -162,7 +164,7 @@ if __name__ == "__main__":
     print("pid:", pid)
 
     persona_file = args.persona_file
-    multi_choice_questions_file = "../data/motivation_dataset.json"
+    multi_choice_questions_file = "../data/motivation_dataset_rewrite.json"
 
     dir_path = os.path.dirname(persona_file)
     
