@@ -242,8 +242,7 @@ if __name__ == "__main__":
     
     pid = os.getpid()
     print("pid:", pid)
-    dir = "../data/supersummary.json"
-    _, raw_data = read_json(dir)
+    _, raw_data = read_json()
     print(len(raw_data))
     if not os.path.exists(args.save_folder):
         os.makedirs(args.save_folder)

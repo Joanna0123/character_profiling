@@ -56,28 +56,19 @@ def get_response(prompt,  temperature=0):
             
     return response
 
-def read_json(dir: str):
+def read_json():
     truth = '../data/truth_persona_all_dimension.json'
-    with open(truth, "r") as f:
+    with open(truth, "r", encoding = 'utf-8') as f:
         truth = json.load(f)
     truth_title = [item['title'] for item in truth]
 
     SS_datasets = []
     SS_persona_data = []
-    with open(dir, "r") as f:
-        raw_data = json.load(f)
-    for title, book in raw_data.items():
-        if title not in truth_title:
-            continue
-        chapter_summaries = {}
-        concat_summary = ""
-        for chapter, summary in book['chapter_summaries'].items():
-            concat_summary += summary
-            if 'analysis' in chapter.lower():
-                chapter_summaries[chapter] = {'summary':concat_summary,'analysis':summary}
-                concat_summary = ""
+
+    for book in truth:
+        title = book['title']
         characters = {}
-        character = next(iter(book['characters']))
+        character = list(book['persona'].keys())[0]
         
         characters[character] = {}
         SS_datasets.append(
